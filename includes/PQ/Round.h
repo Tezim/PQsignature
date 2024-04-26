@@ -10,8 +10,8 @@ class Round {
 
 private:
     Commitments roundMasterCommitments{};
-    std::vector<int> round_perms{};
     MasterResponse masterResponse;
+    std::vector<int> round_perms{};
 
 public:
     Round();

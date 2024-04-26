@@ -5,6 +5,7 @@
 #include <vector>
 #include "NTL/GF2.h"
 #include "NTL/mat_GF2.h"
+#include "hmac_drbg.h"
 
 class Polynomial {
 
@@ -28,6 +29,7 @@ public:
 };
 
 Polynomial generateRandomPolynomial(uint8_t n);
+Polynomial generateRandomPolynomial(uint32_t n, hmac_drbg_ctx* ctx);
 void display(Polynomial p);
 
 #endif //HELPME_POLYNOMIAL_H

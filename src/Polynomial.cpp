@@ -2,8 +2,8 @@
 // Created by Tatiana on 11/24/2023.
 //
 
-#include "Polynomial.h"
-#include "crypt/helpers.h"
+#include "includes/PQ/Polynomial.h"
+#include "includes/PQ/helpers.h"
 
 #include <utility>
 
@@ -37,6 +37,14 @@ Polynomial generateRandomPolynomial(uint8_t n){
     p.setAbsolute(0);
     p.setLinear(randomLinear(n));
     p.setQuadratic(randomQuadratic(n));
+    return p;
+}
+
+Polynomial generateRandomPolynomial(uint32_t n, hmac_drbg_ctx* ctx){
+    Polynomial p = Polynomial();
+    p.setAbsolute(0);
+    p.setLinear(randomLinear(n, ctx));
+    p.setQuadratic(randomQuadratic(n, ctx));
     return p;
 }
 void display(Polynomial p)  {

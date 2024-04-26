@@ -3,16 +3,20 @@
 
 #include "NTL/vec_GF2.h"
 #include "NTL/mat_GF2.h"
-#include "structures/Polynomial.h"
-#include "structures/Commitments.h"
-#include "structures/MasterResponse.h"
-#include "structures/Round.h"
-#include "structures/User.h"
+#include "Polynomial.h"
+#include "Commitments.h"
+#include "MasterResponse.h"
+#include "Round.h"
+#include "User.h"
+#include "hmac_drbg.h"
 
 
 NTL::vec_GF2 randomLinear(uint32_t n);
+NTL::vec_GF2 randomLinear(uint32_t n, hmac_drbg_ctx* ctx);
 NTL::mat_GF2 randomQuadratic(uint32_t n);
+NTL::mat_GF2 randomQuadratic(uint32_t n, hmac_drbg_ctx* ctx);
 NTL::Vec<Polynomial> randomSystem(uint32_t n, uint32_t m, NTL::vec_GF2 s);
+NTL::Vec<Polynomial> randomSystem(uint32_t n, uint32_t m, NTL::vec_GF2 s, hmac_drbg_ctx* ctx);
 int32_t findLastNonZeroIndex(const NTL::vec_GF2& S);
 NTL::GF2 calculate_result(const Polynomial& polynomial, const NTL::vec_GF2& vector);
 NTL::GF2 absolute_s(const int32_t & absolute, const NTL::vec_GF2& vector);
@@ -29,5 +33,6 @@ void permuteCommitments(std::vector<int>& permutation, std::vector<std::string>&
 std::string commitmentFromString(std::vector<std::string> &vector);
 std::vector<int> generateChallengeVector(std::vector<Commitments> &masterCommitments, int rounds, std::string& message);
 int verifyCommitments(Round &round, int challenge,std::vector<User> &users);
+int generator_read(uint8_t * buffer_out, size_t bufferSize);
 
 #endif //HELPME_HELPERS_H

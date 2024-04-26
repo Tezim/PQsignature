@@ -22,7 +22,7 @@ public:
 
 };
 
-KeyPair generateRandomKeypair(uint32_t n, uint32_t m);
+KeyPair generateRandomKeypair(uint32_t n, uint32_t m, bool arbg);
 
 
 #endif //HELPME_KEYPAIR_H

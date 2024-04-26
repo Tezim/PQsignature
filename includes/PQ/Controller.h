@@ -6,14 +6,15 @@
 #define HELPME_CONTROLLER_H
 
 
-#include "structures/User.h"
-#include "structures/Signature.h"
+#include "User.h"
+#include "Signature.h"
 
 class Controller {
 public:
-    static void KeyGen(User& user);
+    static void KeyGen(User& user, bool arng);
     static Signature Sign(std::vector<User>& users, std::string message);
     static int Verify(const Signature& signature, std::string message, std::vector<User> users);
+    User CreateUser();
 };
 
 

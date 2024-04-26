@@ -5,13 +5,13 @@
 #include <vector>
 #include <random>
 #include <algorithm>
-#include "Controller.h"
-#include "CONFIG.h"
-#include "structures/Round.h"
-#include "crypt/helpers.h"
+#include "includes/PQ/Controller.h"
+#include "CONFIG.ini"
+#include "includes/PQ/Round.h"
+#include "includes/PQ/helpers.h"
 
-void Controller::KeyGen(User& user) {
-    user.setKeyPair(generateRandomKeypair(N, M));
+void Controller::KeyGen(User& user, bool arng) {
+    user.setKeyPair(generateRandomKeypair(N, M, arng));
 }
 
 Signature Controller::Sign(std::vector<User> &users, std::string message) {
@@ -117,3 +117,9 @@ int Controller::Verify(const Signature& signature, std::string message, std::vec
     }
     return 0;
 }
+
+User Controller::CreateUser(){
+    // databáza možno?
+    User new_user = User();
+    return new_user;
+};

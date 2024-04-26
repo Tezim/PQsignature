@@ -1,3 +1,5 @@
-/idea
+.idea
 /cmake-build-debug-coverage
 /cmake-build-debug/
+.idea/dataSources.xml
+.idea/vcs.xml

@@ -1,12 +1,13 @@
 #include <algorithm>
 #include <sstream>
 #include "NTL/ZZ.h"
-#include "structures/User.h"
-#include "structures/MasterResponse.h"
-#include "CONFIG.h"
-#include "structures/Signature.h"
-#include "controlInterface/Controller.h"
-#include "QR/qrcodegen.h"
+#include "includes/PQ/User.h"
+#include "includes/PQ/MasterResponse.h"
+#include "CONFIG.ini"
+#include "includes/PQ/Signature.h"
+#include "includes/PQ/Controller.h"
+#include "includes/PQ/qrcodegen.h"
+#include "includes/PQ/Group_.h"
 
 using qrcodegen::QrCode;
 
@@ -15,35 +16,29 @@ std::string vectorToString(const std::vector<std::string>& vec);
 
 NTL_CLIENT
 
+
 int main() {
+    //Group_ signing_group_1 = Group_();
+    //signing_group_1.addUser(User());
 
-    std::vector<User> users;
+    //std::string message = "test";
+    //std::string controlMessage = "test";
 
-    for (int i = 0; i < N_USERS; i++){
-        User new_user = User();
-        new_user.setId(i);
-        //* -----------------------------------
-        Controller::KeyGen(new_user);
-        //* -----------------------------------
-        users.push_back(new_user);
-    }
 
-    // one signer per group for testing ; comment next line for -3 error code
-    users[0].setSigner(true);
-    std::string message = "test";
-    std::string controlMessage = "test";
+    //auto keypair = generateRandomKeypair(5,5, false);
+
 
     //* -----------------------------------
-    Signature signature = Controller::Sign(users, message);
+    //Signature signature = Controller::Sign(const_cast<vector<User> &>(signing_group_1.getUsers()), message);
     //* -----------------------------------
 
-    int verificationResult = Controller::Verify(signature, controlMessage, users);
+    //int verificationResult = Controller::Verify(signature, controlMessage, signing_group_1.getUsers());
 
     // verification result
     // - 0  for correct signature for provided group and message
     // - -1 bad signature
     // - -3 all members are non signers
-    std::cout << verificationResult<<std::endl;
+    //std::cout << verificationResult<<std::endl;
 
    /* std::string string_signature;
     for (const Commitments& c : signature.getMasterCommitments()){
@@ -82,6 +77,7 @@ int main() {
     return 0;
 }
 
+/*
 std::string vec_GF2_to_string(const NTL::vec_GF2& vec) {
     std::ostringstream oss;
     for (long i = 0; i < vec.length(); ++i) {
@@ -101,6 +97,7 @@ std::string vectorToString(const std::vector<std::string>& vec) {
     return oss.str();
 }
 
+*/
 
 
 

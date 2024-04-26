@@ -5,8 +5,8 @@
 #include <cstdint>
 #include <iostream>
 #include <vector>
-#include "structures/KeyPair.h"
-#include "structures/Commitments.h"
+#include "KeyPair.h"
+#include "Commitments.h"
 
 class User {
 private:

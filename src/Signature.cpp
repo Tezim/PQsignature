@@ -2,7 +2,7 @@
 // Created by Tatiana on 12/2/2023.
 //
 
-#include "Signature.h"
+#include "includes/PQ/Signature.h"
 
 void Signature::setMasterCommitments(const std::vector<Commitments> &masterCommitments) {
     Signature::masterCommitments = masterCommitments;
