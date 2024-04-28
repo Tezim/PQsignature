@@ -11,9 +11,12 @@
 
 class Controller {
 public:
-    static void KeyGen(User& user, bool arng);
+    static KeyPair KeyGen(bool arng);
+    KeyPair readKeyPair(std::string path);
+    bool saveKeyPair(KeyPair keyPair, std::string path);
     static Signature Sign(std::vector<User>& users, std::string message);
     static int Verify(const Signature& signature, std::string message, std::vector<User> users);
+
     User CreateUser();
 };
 

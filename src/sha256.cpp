@@ -19,7 +19,7 @@
  */
 
 #include <string.h>
-#include "includes/PQ/sha256.h"
+#include "PQ/sha256.h"
 
 #define GET_UINT32(n,b,i)                       \
 {                                               \

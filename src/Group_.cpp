@@ -2,7 +2,7 @@
 // Created by Tatiana on 4/21/2024.
 //
 
-#include "includes/PQ/Group_.h"
+#include "PQ/Group_.h"
 
 void Group_::addUser(User user) {
     user.setId(n_users);

@@ -17,14 +17,14 @@
  *	 Implementacia navyse podporuje PREDICTION RESISTANCE
  */
 
-#include "includes/PQ/hmac_drbg.h"
+#include "PQ/hmac_drbg.h"
 #include <string.h>
 #include <stdlib.h>
-#include "includes/PQ/hmac_sha256.h"
+#include "PQ/hmac_sha256.h"
 
 //nasledujuci header file sa zmaze pri realnom pouzivani, je tu len kvoli dummy getovaniu aktualneho casu pri inicializacii srand
 #include <time.h>
-#include "includes/PQ/helpers.h"
+#include "PQ/helpers.h"
 
 int get_entropy_input(/*out*/ uint8_t *entropy_input, /*in*/ uint32_t entropy_input_length)
 {

@@ -1,13 +1,13 @@
 #include <algorithm>
 #include <sstream>
 #include "NTL/ZZ.h"
-#include "includes/PQ/User.h"
-#include "includes/PQ/MasterResponse.h"
+#include "PQ/User.h"
+#include "PQ/MasterResponse.h"
 #include "CONFIG.ini"
-#include "includes/PQ/Signature.h"
-#include "includes/PQ/Controller.h"
-#include "includes/PQ/qrcodegen.h"
-#include "includes/PQ/Group_.h"
+#include "PQ/Signature.h"
+#include "PQ/Controller.h"
+#include "PQ/qrcodegen.h"
+#include "PQ/Group_.h"
 
 using qrcodegen::QrCode;
 
@@ -15,7 +15,6 @@ std::string vec_GF2_to_string(const NTL::vec_GF2& vec);
 std::string vectorToString(const std::vector<std::string>& vec);
 
 NTL_CLIENT
-
 
 int main() {
     //Group_ signing_group_1 = Group_();

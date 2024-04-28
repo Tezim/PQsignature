@@ -28,7 +28,7 @@ public:
 
 };
 
-Polynomial generateRandomPolynomial(uint8_t n);
+Polynomial generateRandomPolynomial(uint32_t n);
 Polynomial generateRandomPolynomial(uint32_t n, hmac_drbg_ctx* ctx);
 void display(Polynomial p);
 

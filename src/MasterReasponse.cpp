@@ -2,8 +2,8 @@
 // Created by Tatiana on 12/2/2023.
 //
 
-#include "includes/PQ/MasterResponse.h"
-#include "includes/PQ/helpers.h"
+#include "PQ/MasterResponse.h"
+#include "PQ/helpers.h"
 
 MasterResponse getMasterResponse(std::vector<int> &permutation, std::vector<std::vector<NTL::vec_GF2>> &user_responses,
                                                  std::vector<std::string> user_c3, std::vector<std::string> user_c4,

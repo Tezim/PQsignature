@@ -31,7 +31,7 @@
 #include <utility>
 #include <iostream>
 #include <fstream>
-#include "includes/PQ/qrcodegen.h"
+#include "PQ/qrcodegen.h"
 
 using std::int8_t;
 using std::uint8_t;

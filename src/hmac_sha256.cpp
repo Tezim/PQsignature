@@ -4,8 +4,8 @@
  *  
  */
 
-#include "includes/PQ/hmac_sha256.h"
-#include "includes/PQ/sha256.h"
+#include "PQ/hmac_sha256.h"
+#include "PQ/sha256.h"
 #include <string.h>
 #include <stdlib.h>
 

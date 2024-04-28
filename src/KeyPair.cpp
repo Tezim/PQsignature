@@ -1,6 +1,6 @@
-#include "includes/PQ/KeyPair.h"
-#include "includes/PQ/helpers.h"
-#include "includes/PQ/hmac_drbg.h"
+#include "PQ/KeyPair.h"
+#include "PQ/helpers.h"
+#include "PQ/hmac_drbg.h"
 
 void KeyPair::setSk(const NTL::vec_GF2 &sk) {
     SK = sk;

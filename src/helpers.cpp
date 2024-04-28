@@ -1,16 +1,16 @@
 #include <random>
-#include "includes/PQ/helpers.h"
+#include "PQ/helpers.h"
 #include "NTL/vec_GF2.h"
 #include "NTL/mat_GF2.h"
-#include "includes/PQ/Polynomial.h"
+#include "PQ/Polynomial.h"
 #include <iomanip>
 #include <sstream>
 #include <bitset>
-#include "includes/PQ/Keccak.h"
-#include "includes/PQ/Commitments.h"
-#include "includes/PQ/MasterResponse.h"
-#include "includes/PQ/User.h"
-#include "includes/PQ/hmac_drbg.h"
+#include "PQ/Keccak.h"
+#include "PQ/Commitments.h"
+#include "PQ/MasterResponse.h"
+#include "PQ/User.h"
+#include "PQ/hmac_drbg.h"
 #include <windows.h>
 
 NTL::vec_GF2 randomLinear(uint32_t n) {

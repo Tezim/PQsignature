@@ -2,8 +2,8 @@
 // Created by Tatiana on 11/24/2023.
 //
 
-#include "includes/PQ/Polynomial.h"
-#include "includes/PQ/helpers.h"
+#include "PQ/Polynomial.h"
+#include "PQ/helpers.h"
 
 #include <utility>
 
@@ -32,7 +32,7 @@ const NTL::mat_GF2 &Polynomial::getQuadratic() const {
     return quadratic;
 }
 
-Polynomial generateRandomPolynomial(uint8_t n){
+Polynomial generateRandomPolynomial(uint32_t n){
     Polynomial p = Polynomial();
     p.setAbsolute(0);
     p.setLinear(randomLinear(n));
